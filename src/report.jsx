@@ -20,6 +20,7 @@ export default class report extends Component {
     district: [],
   };
   getData = async () => {
+    //comment
     if(this.state.zipcode.length < 5) {
       return false
     }
