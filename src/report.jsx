@@ -21,6 +21,7 @@ export default class report extends Component {
   };
   getData = async () => {
     //comment
+    //branch1 commit
     if(this.state.zipcode.length < 5) {
       return false
     }
