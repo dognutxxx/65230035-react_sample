@@ -9,6 +9,8 @@ import Card from "react-bootstrap/Card";
 import Table from "react-bootstrap/Table";
 import axios from "axios";
 import Common from "./common";
+import Image from "react-bootstrap/Image";
+
 const BASE_URL = Common.API_URL;
 export default class report extends Component {
   state = {
@@ -18,14 +20,13 @@ export default class report extends Component {
     province_code: 0,
     province_name: "",
     district: [],
+    Name: "65230035 : Arnon Prommoon",
   };
   getData = async () => {
-    //comment
-    //branch1 commit
-    if(this.state.zipcode.length < 5) {
-      return false
+    if (this.state.zipcode.length < 5) {
+      return false;
     }
-    
+
     try {
       await axios
         .get(`${BASE_URL}/${this.state.zipcode}`)
@@ -67,7 +68,17 @@ export default class report extends Component {
         <Navbar bg="primary" variant="dark">
           <Container>
             <Navbar.Brand href="#">ค้นหาเลขไปรษณีย์</Navbar.Brand>
-            <div>{/* Name */}</div>
+            <div style={{ fontSize: "20px" }}>
+              <Image
+                style={{ width: "90px", height: "90px", margin: "10px" }}
+                src="https://siamblockchain.com/wp-content/uploads/2021/10/cryptopunk-500-million-usd-740x492.png"
+                alt="icon"
+                thumbnail
+                roundedCircle
+                rounded
+              />
+              {this.state.Name}
+            </div>
           </Container>
         </Navbar>
         <Container>
