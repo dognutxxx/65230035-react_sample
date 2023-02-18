@@ -20,9 +20,7 @@ export default class report extends Component {
     district: [],
   };
   getData = async () => {
-    if(this.state.zipcode.length < 5){
-      return false
-    }
+    
     try {
       await axios
         .get(`${BASE_URL}/${this.state.zipcode}`)
